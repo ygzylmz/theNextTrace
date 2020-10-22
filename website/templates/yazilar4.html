@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Contact - Philosophy</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/bootstrap/css/bootstrap-theme.min.css' %}">
+
+    <!-- script
+    ================================================== -->
+    <script src="{% static 'website/js/modernizr.js' %}"></script>
+    <script src="{% static 'website/js/pace.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/4125e63947.js" crossorigin="anonymous"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <style>
+        .container{
+            width: 1200px;
+            margin: 30px auto;
+            text-align: justify;
+        }
+        .col-lg-4{
+            padding: 3px;
+            text-align: justify;
+            box-shadow: 1px 1px 2px;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            margin: 4px;
+        }
+        .center{
+            display: block;
+            margin: auto;
+        }
+        .s-pageheader{
+            padding: 100px;
+            padding-right: 0px;
+        }
+    </style>
+</head>
+
+
+    <!-- pageheader
+    ================================================== -->
+    <div class="s-pageheader">
+
+        <header class="header">
+            <div class="header__content row">
+
+                <div class="header__logo ">
+                    <a class="logo" href="index.html">
+                        <img src="/media/default/ohdintropng.png " style="width:200px;height:65px; alt="Homepage">
+                    </a>
+                </div> <!-- end header__logo -->
+
+                <ul class="header__social">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UC-Zx1Kawcnmtr-q81KEVhWw/featured?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/thenexttrace/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/thenexttrace"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                </ul> <!-- end header__social -->
+
+                <a class="header__search-trigger" href="#0"></a>
+
+                <div class="header__search">
+
+                    <form role="search" method="get" class="header__search-form" action="#">
+                        <label>
+                            <span class="hide-content">Search for:</span>
+                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                        </label>
+                        <input type="submit" class="search-submit" value="Search">
+                    </form>
+
+                    <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+
+                </div>  <!-- end header__search -->
+
+
+                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+
+                <nav class="header__nav-wrap">
+
+                    <h2 class="header__nav-heading h6">Site Navigation</h2>
+
+                    <ul class="header__nav">
+                        <li><a href="{% url 'home' %}" title="">Anasayfa</a></li>
+                        <li><a href="{% url 'GonderilerGezi' %}" title="">Gezi Yazıları</a></li>
+
+                        <!--
+
+                        <li class="has-children">
+                            <a href="#0" title="">Gezi Yazıları</a>
+                            <ul class="sub-menu">
+
+                            <li><a href="category.html">Lifestyle</a></li>
+                            <li><a href="category.html">Health</a></li>
+                            <li><a href="category.html">Family</a></li>
+                            <li><a href="category.html">Management</a></li>
+                            <li><a href="category.html">Travel</a></li>
+                            <li><a href="category.html">Work</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a href="{% url 'GonderilerHayat' %}" title="">Hayata Dair</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Dizi-Film Elestirileri</a>
+                            <ul class="sub-menu">
+                            <li><a href="{% url 'GonderilerDizi' %}">Dizi Elestirileri</a></li>
+                            <li><a href="{% url 'GonderilerFilm' %}">Film Elestirileri</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'about' %}" title="">Hakkımızda</a></li>
+                    <!--    <li><a href="{% url 'contact' %}" title="">Iletisim</a></li> -->
+                    </ul> <!-- end header__nav -->
+
+                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+
+                </nav> <!-- end header__nav-wrap -->
+
+            </div> <!-- header-content -->
+        </header> <!-- header -->
+
+    </div> <!-- end s-pageheader -->
+
+
+    <div class="container">
+        <div class="s-content__media col-full">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-lg-4">
+            {% if post.get_image %}
+                <img src="{{ post.get_image }}" width="340" height="240" class="center">
+            {% endif %} <br>
+            <h1><a href="{% url 'post-detay4' post.slug %} ">  {{post}} </a></h1><br><p>{{ post.content | safe | truncatechars:200 }}</p></div>
+        {% if forloop.counter|divisibleby:3 and not forloop.last %}
+    </div><div class="row">
+        {% endif %}
+        {% endfor %}
+</div>
+        </div></div>

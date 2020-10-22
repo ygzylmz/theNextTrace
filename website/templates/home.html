@@ -1,0 +1,444 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>AnaSayfa | TheNextTrace</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}">
+
+    <!-- script
+    ================================================== -->
+    <script src="{% static 'website/js/modernizr.js' %}"></script>
+    <script src="{% static 'website/js/pace.min.js' %}"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+    </style>
+</head>
+
+<body id="top">
+
+
+    <section class="s-pageheader s-pageheader--home">
+
+        <header class="header">
+            <div class="header__content row">
+
+                <div class="header__logo">
+                    <a class="logo" href="index.html">
+                        <img src="/media/default/ohdintropng.png" style="width:230px;height:70px;" alt="Homepage">
+                    </a>
+                </div> <!-- end header__logo -->
+
+                <ul class="header__social">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UC-Zx1Kawcnmtr-q81KEVhWw/featured?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/thenexttrace/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/thenexttrace"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    
+                </ul> <!-- end header__social -->
+
+                <a class="header__search-trigger" href="#0"></a>
+
+                <div class="header__search">
+
+                    <form role="search" method="get" class="header__search-form" action="#">
+                        <label>
+                            <span class="hide-content">Search for:</span>
+                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                        </label>
+                        <input type="submit" class="search-submit" value="Search">
+                    </form>
+        
+                    <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+
+                </div>  <!-- end header__search -->
+
+
+                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+
+                <nav class="header__nav-wrap">
+
+                    <h2 class="header__nav-heading h6">Site Navigation</h2>
+
+                    <ul class="header__nav">
+                        <li><a href="{% url 'home' %}" title="">Anasayfa</a></li>
+                        <li><a href="{% url 'GonderilerGezi' %}" title="">Gezi Yazıları</a></li>
+                        <!--
+                        <li class="has-children">
+                            <a href="#0" title="">Gezi Yazıları</a>
+                            <ul class="sub-menu">
+                            <li><a href="category.html">Lifestyle</a></li>
+                            <li><a href="category.html">Health</a></li>
+                            <li><a href="category.html">Family</a></li>
+                            <li><a href="category.html">Management</a></li>
+                            <li><a href="category.html">Travel</a></li>
+                            <li><a href="category.html">Work</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a href="{% url 'GonderilerHayat' %}" title="">Hayata Dair</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Dizi-Film Elestirileri</a>
+                            <ul class="sub-menu">
+                            <li><a href="{% url 'GonderilerDizi' %}">Dizi Elestirileri</a></li>
+                            <li><a href="{% url 'GonderilerFilm' %}">Film Elestirileri</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'about' %}" title="">Hakkımızda</a></li>
+                        <!-- <li><a href="{% url 'contact' %}" title="">Iletisim</a></li> -->
+                    </ul> <!-- end header__nav -->
+
+                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+
+                </nav> <!-- end header__nav-wrap -->
+
+            </div> <!-- header-content -->
+        </header> <!-- header -->
+
+
+        <div class="pageheader-content row">
+            <div class="col-full">
+
+                <div class="featured">
+
+                    <div class="featured__column featured__column--big">
+                        <div class="entry" >
+                            
+                            <div class="entry__content">
+<iframe width="710" height="480" src="https://www.youtube.com/embed/Cf4Im0xzdv0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+                    </div>
+
+                    <div class="featured__column featured__column--small">
+                        <div class="entry" style="background-image:url(/media/default/dene2.jpg);">
+                            
+                            <div class="entry__content">
+                               <!-- end featured__big  <span class="entry__category"><a href="#0">Management</a></span>
+                               -->
+
+                               
+
+                                <h1><a href="#0" title="">Dinleyiciler Hazır mıyız ??</a></h1>
+                                
+                                <audio controls>
+                                    <source src="/media/default/radyoSes.mp3" type="audio/mpeg">
+                                </audio>
+
+                                <div class="entry__info">
+                                    
+
+
+                                </div>
+                            </div> <!-- end entry__content -->
+                          
+                        </div>
+                        
+                        <div class="entry" style="background-image:url(/media/default/biz.jpg);">
+
+                            <div class="entry__content">
+                                <!-- end entry <span class="entry__category"><a href="#0">LifeStyle</a></span>
+                                -->
+                                <h1><a href="#0" title="">Sizleri de davet ediyoruz !!</a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <!--<ul class="entry__meta">
+                                        <li><a href="#0">John Doe</a></li>
+                                        <li>December 21, 2017</li>
+                                    </ul> -->
+                                </div>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__small -->
+                </div> <!-- end featured -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end pageheader-content row -->
+
+    </section> <!-- end s-pageheader -->
+
+
+    <!-- s-content
+    ================================================== -->
+
+
+    <!-- s-extra
+    ================================================== -->
+    <section class="s-extra">
+
+        <div class="row top">
+
+            <div class="col-eight md-six tab-full popular">
+                <h3>Popüler İçerikler</h3>
+
+                <div class="block-1-2 block-m-full popular__posts">
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/wheel-150.jpg" alt="">
+                        </a>
+                        <h5><a href="http://127.0.0.1:8000/website/GonderilerGezi/postDetay/ayanis/">Ayanis</a></h5>
+                     
+                        <section class="popular__meta">
+                         <span class="popular__author"> <a> Tarih </a></span> 
+                         <!-- 
+                             <span class="popular__date"><span>on</span> <time datetime="2017-12-19">Dec 19, 2017</time></span> -->
+                        </section>  
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/shutterbug-150.jpg" alt="">
+                        </a>
+                        <h5><a href="http://127.0.0.1:8000/website/GonderilerGezi/postDetay/safranbolu-ve-kastamonu/">Safranbolu ve Kastamonu</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"> <a> Tarih </a></span>
+                            <!--  <span class="popular__date"><span>on</span> <time datetime="2017-12-18">Dec 18, 2017</time></span>
+                        </section> -->
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/cookies-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">Ben Buradayım Sevgili Okuyucum, SEN NEREDESİN ?</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"><a> Ebru | Tarih | Hayata Dair </a> </span>
+                        </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/beetle-150.jpg" alt="">
+                        </a>
+                        <h5><a href="http://127.0.0.1:8000/website/GonderilerFilm/postDetay3/kefaret">Kefaret</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"> <a> Ebru | Tarih | Film Elestirileri </a></span>
+                        </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/tulips-150.jpg" alt="">
+                        </a>
+                        <h5><a href="http://127.0.0.1:8000/website/GonderilerGezi/postDetay/amasra/">Toprak Kokan Şehir, Deniz Kokan Şehir ...</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"><a href="#0"> Ebru | Tarih | Gezi Yazıları</a></span>
+                            </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/salad-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">Healthy Mediterranean Salad Recipes</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-12">Dec 12, 2017</time></span>
+                        </section>
+                    </article>
+                </div> <!-- end popular_posts -->
+            </div> <!-- end popular -->
+            
+            <div class="col-four md-six tab-full about">
+
+                <h3>Website Misyonumuz</h3>
+
+                <p>
+                    Bu site İzci Onur ile çadır ve doğa hayatını keşfe başlayan Ebru olarak gezi hayatımızı ve karavan sürecine geçerken yaşadıklarımızı sizlerle de paylaşmak,
+                    aynı zamanda izlediğimiz dizilerin, filmlerin eleştirilerini, hayatın içerisinden karaladıklarımızı da sizinle paylaşmak gayesini amaçlamaktadır. Kamuoyuna saygıyla duyurulur !!
+                </p>
+
+                <ul class="about__social">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UC-Zx1Kawcnmtr-q81KEVhWw/featured?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/thenexttrace/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/thenexttrace"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                </ul> <!-- end header__social -->
+            </div> <!-- end about -->
+
+        </div> <!-- end row -->
+
+        <div class="row bottom tags-wrap">
+
+             <!--
+            <div class="col-full tags">
+                <h3>Tags</h3>
+                <div class="tagcloud">
+                    <a href="#0">Salad</a>
+                    <a href="#0">Recipe</a>
+                    <a href="#0">Places</a>
+                    <a href="#0">Tips</a>
+                    <a href="#0">Friends</a>
+                    <a href="#0">Travel</a>
+                    <a href="#0">Exercise</a>
+                    <a href="#0">Reading</a>
+                    <a href="#0">Running</a>
+                    <a href="#0">Self-Help</a>
+                    <a href="#0">Vacation</a>
+                </div> end tagcloud
+
+            </div>  end tags -->
+        </div> <!-- end tags-wrap -->
+
+    </section> <!-- end s-extra -->
+
+    <!-- s-footer
+    ================================================== -->
+    <footer class="s-footer">
+
+        <div class="s-footer__main">
+            <div class="row">
+                
+                <div class="col-two md-four mob-full s-footer__sitelinks">
+                        
+                    <h4>Hızlı Linkler</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="{% url 'home' %}" title="">Anasayfa</a></li>
+                        <li><a href="{% url 'GonderilerGezi' %}" title="">Gezi Yazıları</a></li>
+                        <li><a href="{% url 'GonderilerHayat' %}" title="">Hayata Dair</a></li>
+                        <li><a href="{% url 'GonderilerFilm' %}">Film Elestirileri</a></li>
+                        <li><a href="{% url 'GonderilerDizi' %}">Dizi Elestirileri</a></li>
+                        <li><a href="{% url 'about' %}" title="">Hakkımızda</a></li>
+                        <!-- <li><a href="{% url 'contact' %}" title="">Iletisim</a></li> -->
+                    </ul>
+
+                </div>
+
+                <div class="col-two md-four mob-full s-footer__archives">
+                       <!--
+                    <h4>Archives</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="#0">January 2018</a></li>
+                        <li><a href="#0">December 2017</a></li>
+                        <li><a href="#0">November 2017</a></li>
+                        <li><a href="#0">October 2017</a></li>
+                        <li><a href="#0">September 2017</a></li>
+                        <li><a href="#0">August 2017</a></li>
+                    </ul>
+                -->
+                </div> <!-- end s-footer__archives -->
+
+                <div class="col-two md-four mob-full s-footer__social">
+                        
+                    <h4>Sosyal Medya</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="https://www.youtube.com/channel/UC-Zx1Kawcnmtr-q81KEVhWw/featured?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a></li>
+                        <li><a href="https://www.instagram.com/thenexttrace/"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                        <li><a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    </ul>
+
+                </div> <!-- end s-footer__social -->
+
+                <div class="col-five md-full end s-footer__subscribe">
+                        
+                    <h4>EMAIL</h4>
+                    <div class="subscribe-form">
+                        <form id="mc-form" class="group" novalidate="true">
+
+                            <span> thentrace@gmail.com</span>  
+
+                
+                        </form>
+                    </div>
+
+                </div> <!-- end s-footer__subscribe -->
+
+            </div>
+        </div> <!-- end s-footer__main -->
+
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Her Hakkı Saklıdır</span> 
+                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a> & modified by OnurHDogan</span>
+                    </div>
+
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end s-footer__bottom -->
+
+    </footer> <!-- end s-footer -->
+
+
+    <!-- preloader
+    ================================================== -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
